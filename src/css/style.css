@@ -1,0 +1,26 @@
+/* This is sample code from previous project */
+:root {
+  --font-body: "Segoe UI", Helvetica, sans-serif;
+  --font-headline: Haettenschweiler, "Akko Rounded Std Medium", sans-serif;
+  /* colors */
+  --primary-color: #f0a868;
+  --secondary-color: #525b0f;
+  --tertiary-color: #a4b8c4;
+  --light-grey: #d0d0d0;
+  --dark-grey: #303030;
+
+  /* sizes */
+  --font-base: 18px;
+  --small-font: 0.8em;
+  --large-font: 1.2em;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--font-base);
+  color: var(--dark-grey);
+}
+
+/* end sample code *
+ /
