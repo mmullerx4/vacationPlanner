@@ -1,3 +1,4 @@
+//javascript for swapping out image on each page
 const currentPage = window.location.pathname;
 
 switch (currentPage) {
