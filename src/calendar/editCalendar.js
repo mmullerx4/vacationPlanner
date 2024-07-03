@@ -1,1 +1,1 @@
-//javascript for edit activity and details
+//javascript for editing activity
