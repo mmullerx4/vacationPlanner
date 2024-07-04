@@ -1,4 +1,4 @@
-//Handles login funtionality
+//initialization for login
 import { login } from "./auth.mjs";
 import { getParam, loadHeaderFooter, qs } from "./utils.mjs";
 

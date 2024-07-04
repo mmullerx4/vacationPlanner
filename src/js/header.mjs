@@ -1,4 +1,4 @@
-//javascript for swapping out image on each page
+//Logic for swapping header images
 const currentPage = window.location.pathname;
 
 switch (currentPage) {

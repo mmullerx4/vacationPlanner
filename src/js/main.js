@@ -1,2 +1,1 @@
-//initializing the app
-?
+//Main entry point

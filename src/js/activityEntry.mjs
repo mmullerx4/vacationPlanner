@@ -1,7 +1,4 @@
-//javascript for handling new activity entry
-//take from form and add to calendar
-
-//Where to take from form and add to activities.json??
+//Logic for activity entry
 
 document.getElementById("activityForm").addEventListener("submit", function(event) {
     event.preventDefault();
@@ -17,20 +14,11 @@ document.getElementById("activityForm").addEventListener("submit", function(even
     const organizerName= document.getElementById("organizerName").value;
     const organizerEmail= document.getElementById("organizerEmail").value;
 
-  //find correct date for the activity
-  // const dateCells = document.querySelectorAll(".date"); //selects all with class of date & creates NodeList(array of Node objects) & store in dateCells
-  // dateCells.forEach(cell => { //for each date in dateCells
-  //   if (cell.textContent === activityDate.split("-")[2]) { //check if matches activity date
-  //     const activityElement = document.createElement("div"); //create & store
-  //     activityElement.textContent = `${activityName} at ${activityTime}`
-  //     cell.appendChild(activityElement);//add them to date cell of calendar
-  //   }
-  //   });
-  // });
+  
   const dateCells = document.querySelectorAll(".date");
   dateCells.forEach(cell => { //for each date in dateCells
     if (cell.textContent === activityDate.split("-")[2]) { //check if matches activity date
-      const activityElement = document.createElement("div"); //create & store
+      const activityElement = document.createElement("div"); //create & store for calendar & modal
       activityElement.textContent = `${activityName} at ${activityTime}`;
       activityElement.classList.add("activity");
       activityElement.dataset.description = activityDescription;

@@ -1,1 +1,1 @@
-//authentication logic
+//Initialization for authentication

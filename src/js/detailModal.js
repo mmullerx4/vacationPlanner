@@ -1,0 +1,2 @@
+//initialization for detail modal
+
