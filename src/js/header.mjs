@@ -1,7 +1,7 @@
 //Logic for swapping header images
-const currentPage = window.location.pathname;
+const headerImage = window.location.pathname;
 
-switch (currentPage) {
+switch (headerImage) {
   case "/page1.html":
     imagePath = "path/image1.jpg"
     break;
