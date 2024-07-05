@@ -3,6 +3,7 @@
 export function initActivityEntry() {
   document.getElementById("activityForm").addEventListener("submit", function(event) {
       event.preventDefault();
+      console.log("Form submitted");
       //get form values
       const activityName= document.getElementById("activityName").value;
       const activityDate= document.getElementById("activityDate").value;
