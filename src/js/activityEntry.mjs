@@ -7,7 +7,7 @@ export function initActivityEntry() {
       const activityName= document.getElementById("activityName").value;
       const activityDate= document.getElementById("activityDate").value;
       const activityTime= document.getElementById("activityTime").value;
-      const activityDescription= document.getElementById("activitydescription").value;
+      const activityDescription= document.getElementById("activityDescription").value;
       const activityDuration= document.getElementById("activityDuration").value;
       const address= document.getElementById("address").value;
       const activityCost= document.getElementById("activityCost").value;

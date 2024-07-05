@@ -25,10 +25,11 @@ export function initCalendar() {
     //Create cells for the activities by date
     for (let i = 0; i < totalCells; i++) {
       const cell = document.createElement("div");
+      cell.classList.add("date");
       if (i >= firstDay) {
         cell.textContent = i - firstDay + 1; //Display day of the month
       }
-      calendarContainer.apendChild(cell);
+      calendarContainer.appendChild(cell);
     }
   }
 

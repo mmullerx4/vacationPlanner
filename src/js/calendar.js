@@ -1,1 +1,3 @@
 //initialization for calendar
+initCalendar()
+
