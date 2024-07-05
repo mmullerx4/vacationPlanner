@@ -1,2 +1,4 @@
 //initialization for activity entry
-initActivityEntry()
+import { initActivityEntry } from 
+"./activityEntry.mjs";
+initActivityEntry();

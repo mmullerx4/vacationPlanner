@@ -1,3 +1,4 @@
 //initialization for calendar
-initCalendar()
+import { initCalendar } from "./calendar.mjs";
+initCalendar();
 

@@ -1,2 +1,3 @@
 //initialization for detail modal
-initDetailModal()
+import { initDetailModal } from "./detailModal.mjs";
+initDetailModal();
