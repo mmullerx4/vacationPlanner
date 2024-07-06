@@ -2,11 +2,18 @@
 
 export function saveActivity
 (activity) {
-  //need to save to ??
+  let activities = json.parse(localStorage.getItem("activities")) || [];
+  activities.push(activity);
+  localStorage.setItem("activities", JSON.stringify(activities));
   console.log("activity saved: ", activity);
 }
 
 export function getActivities() {
-  //Retrieve activities from storage
-  return[];
+  return JSON.parse(localStorage.getItem("activities")) || [];
+}
+
+export function deleteActivity(activityName) {
+  let activities = JSON.parse(localStorage.getItem("activities")) || [];
+  localStorage.setItem("activities", JSON.stringify(activities));
+  console.log("Activity deleted:", activityName);
 }
