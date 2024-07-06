@@ -1,4 +1,6 @@
 //Logic for swapping header images
+//work on this code - just rought draft
+
 const headerImage = window.location.pathname;
 
 switch (headerImage) {

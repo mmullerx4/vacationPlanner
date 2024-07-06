@@ -1,5 +1,4 @@
 //Logic for detail modal
-//import "./activityEntry.js";
 
 export function initDetailModal() {
   const modal = document.getElementById("activityModal");

@@ -1,18 +1,26 @@
-//initialization for login
+//initialization for login for main index.html (main view page)
 import { login } from "./auth.mjs";
 
 export function initLogin() {
   const loginForm = document.getElementById("loginForm");
   if (loginForm) {
     loginForm.addEventListener("submit", (e) => {
-      e.preventDefault();
+      e.preventDefault(); //prevents the auto page reload that happens with a form submission
       const email = document.getElementById("userName").value;
       const password = document.getElementById("password").value;
-    })
+      const response = await login({ email, password }); //the login function (object) is called containing the arguments
+
+      if (response.success) {
+        if (response.user.role === 'accountManager') {
+          window.location.href = "./activityEntry/index.html";
+        }
+      } else {
+        alert("Login failed, please try again");
+      }
+    });
   }
 }
-// document.addEventListener("click", (e) =>{
-//     const email = qs("#email").value;
-//     const password = qs("#password").value;
-//     login({ email, password}, redirect);
-// });
+
+initLogin();
+
+

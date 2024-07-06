@@ -18,18 +18,4 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log("main script loaded and initialized");
 });
 
-function initLogin() {
-  const loginForm = document.getElementById("loginForm");
-  if (loginForm) {
-    loginForm.addEventListener(submit, (e) => {
-      e.preventDefault();
-      const email = document.getElementById("userName").value;
-      getElementById("password").value;
-      login({ email, password }, redirect);
-    });
-  }
-}
-
-
 console.log("main script loaded and initialized");
-
