@@ -2,7 +2,7 @@
 
 export function initActivityEntry() {
   document.getElementById("activityForm").addEventListener("submit", function(event) {
-      event.preventDefault();
+      event.preventDefault(); //get rid of auto refresh page on submit
       console.log("Form submitted");
       //get form values
       const activityName= document.getElementById("activityName").value;
@@ -15,24 +15,6 @@ export function initActivityEntry() {
       const parkingFee= document.getElementById("parkingFee").value;
       const organizerName= document.getElementById("organizerName").value;
       const organizerEmail= document.getElementById("organizerEmail").value;
-
-    
-    // const dateCells = document.querySelectorAll(".date");
-    // dateCells.forEach(cell => { //for each date in dateCells
-    //   if (cell.textContent === activityDate.split("-")[2]) { //check if matches activity date
-    //     const activityElement = document.createElement("div"); //create & store for calendar & modal
-    //     activityElement.textContent = `${activityName} at ${activityTime}`;
-    //     activityElement.classList.add("activity");
-    //     activityElement.dataset.description = activityDescription;
-    //     activityElement.dataset.duration = activityDuration;
-    //     activityElement.dataset.address = address;
-    //     activityElement.dataset.cost = activityCost;
-    //     activityElement.dataset.parkingFee = parkingFee;
-    //     activityElement.dataset.organizerName = organizerName;
-    //     activityElement.dataset.organizerEmail = organizerEmail;
-    //     cell.appendChild(activityElement);//add them to date cell of calendar
-    //   }
-    //   });
 
     saveActivity(activity);
     });

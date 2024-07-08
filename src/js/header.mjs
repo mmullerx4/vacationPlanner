@@ -1,7 +1,7 @@
 //Logic for swapping header images
 //work on this code - just rought draft
 
-const headerImage = window.location.pathname;
+const headerImage = window.location.href = "../public/images";
 
 switch (headerImage) {
   case "/page1.html":

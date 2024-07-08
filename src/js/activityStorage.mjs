@@ -2,9 +2,9 @@
 
 export function saveActivity
 (activity) {
-  let activities = json.parse(localStorage.getItem("activities")) || [];
+  let activities = json.parse(localStorage.getItem("activities")) || []; //creates a object array even if empty
   activities.push(activity);
-  localStorage.setItem("activities", JSON.stringify(activities));
+  localStorage.setItem("activities", JSON.stringify(activities)); //converts back into array after the addition a activity & saves
   console.log("activity saved: ", activity);
 }
 

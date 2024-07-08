@@ -1,4 +1,5 @@
 //write a function for handling the login logic that validates credentials
+//from localStorage verifies credentials & allows signup for new user
 
 const predefinedManagers = [
   { email: "manager1@example.com", password: "password", role: "accountManager" },
@@ -25,9 +26,6 @@ export async function signup(credentials) {
   localStorage.setItem("users", JSON.stringify(users));
   return { success: true, user };
 }
-
-
-
 
 
 // export async function 
