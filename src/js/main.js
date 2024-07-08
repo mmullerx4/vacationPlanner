@@ -6,7 +6,7 @@ import { initLogin } from "./login.js"
 import "./auth.js";
 import "./weather.js";
 import "./header.mjs";
-import { redirect } from "express/lib/response.js";
+
 
 //initialization functions
 document.addEventListener("DOMContentLoaded", () => {
@@ -18,4 +18,3 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log("main script loaded and initialized");
 });
 
-console.log("main script loaded and initialized");

@@ -20,6 +20,8 @@
     "eslint": "^9.5.0",
     "eslint-plugin-react": "^7.34.3",
     "globals": "^15.6.0"
+  },
+  "dependencies": {
+    "vite": "^5.3.3"
   }
 }
-
