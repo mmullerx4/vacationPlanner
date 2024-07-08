@@ -1,5 +1,5 @@
 //Logic for swapping header images
-//work on this code - just rought draft
+//work on this code - just rough draft
 
 const headerImage = window.location.href = "../public/images";
 
