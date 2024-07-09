@@ -1,7 +1,7 @@
 //Main entry point for initializing the app
-import { initActivityEntry } from "./activityEntry.js";
-import { initCalendar } from "./calendar.js";
-import { initDetailModal } from "./detailModal.js";
+import { initActivityEntry } from "./activityEntry.mjs";
+import { initCalendar } from "./calendar.mjs";
+import { initDetailModal } from "./detailModal.mjs";
 import { initLogin } from "./login.js";
 import "./auth.js";
 import "./weather.js";

@@ -16,7 +16,21 @@ export function initActivityEntry() {
       const organizerName= document.getElementById("organizerName").value;
       const organizerEmail= document.getElementById("organizerEmail").value;
 
-    saveActivity(activity);
+//do I really need this?
+    const activity = {
+      name: activityName,
+      date: activityDate,
+      time: activityTime,
+      description: activityDescription,
+      duration: activityDuration,
+      address: address,
+      cost: activityCost,
+      parkingFee: parkingFee,
+      organizerName: organizerName,
+      organizerEmail: organizerEmail
+    };
+
+     saveActivity(activity);
     });
 }
 
