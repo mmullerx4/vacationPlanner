@@ -11,7 +11,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         index: resolve(__dirname, "src/index.html"),
-        login: resolve(__dirname, "src/login/index.html")
+        login: resolve(__dirname, "src/login/index.html"),
         // Add more entries only if main entry points.
       },
     },
