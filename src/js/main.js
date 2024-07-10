@@ -3,9 +3,9 @@ import { initActivityEntry } from "./activityEntry.mjs";
 import { initCalendar } from "./calendar.mjs";
 import { initDetailModal } from "./detailModal.mjs";
 import { initLogin } from "./login.js";
-import "./auth.js";
+import { handleLogin } from "./auth.mjs";
 import "./weather.js";
-import "./header.mjs";
+
 
 //initialization functions
 document.addEventListener("DOMContentLoaded", () => {

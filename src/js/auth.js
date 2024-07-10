@@ -1,6 +1,5 @@
 //Initialization for authentication
-import { login } from "./auth.mjs";
-login();
+import { handleLogin } from "./auth.mjs";
 
-import { signup } from "./auth.mjs";
-signup();
+
+document.getElementById("loginForm").addEventListener("submit", handleLogin);

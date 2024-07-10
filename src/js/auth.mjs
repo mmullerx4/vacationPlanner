@@ -21,10 +21,14 @@ export async function login(credentials) {
 }
 
 export async function signup(credentials) {
-  const user = { ...credentials, role: "user" };
-  users.push(user);
+  const existingUser = users.find(user => user.email === credentails.email);
+  if (existinguser) {
+    return { success: false, message: "User already exists"};
+  }
+  const newUser = { ...credentials, role: "user" };
+  users.push(newUser);
   localStorage.setItem("users", JSON.stringify(users));
-  return { success: true, user };
+  return { success: true, user: newUser };
 }
 
 export async function handleLogin(event) {
@@ -44,3 +48,15 @@ export async function handleLogin(event) {
   }
 }
 
+export async function handleSignup(event) {
+  const email = document.getElementById("signupEmail").value;
+  const password = document.getElementById("signupPassword").value;
+  const response = await signup({ email, password});
+
+  if (response.success) {
+    alert("Signup successful! You can now log in.");
+    window.location.href = "./login.html";
+  } else {
+    alert(response.message || "Signup failed, please try again");
+  }
+}
