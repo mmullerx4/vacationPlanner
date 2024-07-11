@@ -2,7 +2,7 @@
 //from localStorage verifies credentials & allows signup for new user
 
 const predefinedManagers = [
-  { email: "manager1@example.com", password: "password", role: "accountManager" },
+  { email: "manager1@example.com", password: "mgrpassword", role: "accountManager" },
   { email: "manager2@example.com", password: "password", role: "accountManager" }
 ];
 

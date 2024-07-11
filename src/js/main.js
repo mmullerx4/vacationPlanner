@@ -3,7 +3,7 @@ import { initActivityEntry } from "./activityEntry.mjs";
 import { initCalendar } from "./calendar.mjs";
 import { initDetailModal } from "./detailModal.mjs";
 import { initLogin } from "./login.js";
-import { handleLogin } from "./auth.mjs";
+import { handleLogin, handleSignup } from "./auth.mjs";
 import "./weather.js";
 
 
@@ -13,6 +13,9 @@ document.addEventListener("DOMContentLoaded", () => {
   initActivityEntry();
   initCalendar();
   initDetailModal();
+  handleLogin();
+  handleSignup();
+
 
   console.log("main script loaded and initialized");
 });
