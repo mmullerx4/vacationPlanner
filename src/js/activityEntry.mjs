@@ -1,4 +1,5 @@
 //Logic for activity entry
+import { saveActivity } from "./activityStorage.mjs";
 
 export function initActivityEntry() {
   document.getElementById("activityForm").addEventListener("submit", function(event) {

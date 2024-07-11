@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Activity Planner| Home</title>
     <link rel="stylesheet" href="css/style.css" />
-    <script src="src/js/login.js" type="module"></script>
+    <script src="/js/login.js" type="module"></script>
   </head>
 
   <body>
@@ -15,10 +15,10 @@
         <form id="loginForm" onsubmit="handleLogin(event)">
           <input
             type="email"
-            id="userName"
-            placeholder="Email" required>
+            id="userName" name="userName" autocomplete="username"
+            placeholder="email@email.com" required>
           <br /><br /><br />
-          <input type="password" id="password" placeholder="Password" required>
+          <input type="password" id="password" name="password" autocomplete="current-password" placeholder="password" required>
 
           <button type="submit">Log in</button>
           <button
@@ -30,7 +30,6 @@
           </button>
         </form>
       </div>
-      <script src="js/login.js" type="module"></script>
     </div>
   </body>
 </html>

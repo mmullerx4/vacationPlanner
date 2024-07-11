@@ -6,7 +6,7 @@ const predefinedManagers = [
   { email: "manager2@example.com", password: "password", role: "accountManager" }
 ];
 
-const users = JSON.parse(localStorage.getItem("users")) || predefinedManagers;
+let users = JSON.parse(localStorage.getItem("users")) || predefinedManagers;
 
 export async function login(credentials) {
   const user = users.find(
@@ -21,8 +21,8 @@ export async function login(credentials) {
 }
 
 export async function signup(credentials) {
-  const existingUser = users.find(user => user.email === credentails.email);
-  if (existinguser) {
+  const existingUser = users.find(user => user.email === credentials.email);
+  if (existingUser) {
     return { success: false, message: "User already exists"};
   }
   const newUser = { ...credentials, role: "user" };
@@ -37,9 +37,12 @@ export async function handleLogin(event) {
   const password = document.getElementById("password").value;
   const response = await login({ email, password });
 
+  console.log("handleLogin values collected")
+
   if (response.success) {
     if (response.user.role === "accountManager") {
       window.location.href = "./activityEntry/index.html";
+      console.log("login successful & redirection done.")
     } else {
       window.location.href = "./calendar/index.html";
     }
@@ -60,3 +63,7 @@ export async function handleSignup(event) {
     alert(response.message || "Signup failed, please try again");
   }
 }
+
+//event listeners make sure your html forms have the correct IDs to match Javascript
+document.getElementById("loginForm").addEventListener("submit", handleLogin);
+document.getElementById("signupForm").addEventListener("submit", handleSignup);
