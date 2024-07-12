@@ -64,6 +64,6 @@ export async function handleSignup(event) {
   }
 }
 
-//event listeners make sure your html forms have the correct IDs to match Javascript
-document.getElementById("loginForm").addEventListener("submit", handleLogin);
-document.getElementById("signupForm").addEventListener("submit", handleSignup);
+// //event listeners make sure your html forms have the correct IDs to match Javascript
+// document.getElementById("loginForm").addEventListener("submit", handleLogin);
+// document.getElementById("signupForm").addEventListener("submit", handleSignup);
