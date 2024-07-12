@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Activity Planner| Home</title>
-    <script type="module" crossorigin src="/assets/main-9rjq92tR.js"></script>
+    
+    <script type="module" crossorigin src="/assets/main-BmFN5wd2.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/main-BgvQvCOD.css">
   </head>
 
@@ -12,26 +13,25 @@
     <div class="begin">
       <div class="login container">
         <h1>Login</h1>
-        <form id="loginForm">
-          <label for="email" required>User Name: </label>
+        <form id="loginForm" onsubmit="handleLogin(event)">
           <input
             type="email"
-            id="email"
-            placeholder="joe@email.com"
-          /><br /><br /><br />
-          <label for="password" required>Password: </label>
-          <input type="password" id="password" placeholder="Password" />
+            id="userName" name="userName" autocomplete="username"
+            placeholder="email@email.com" required>
+          <br /><br /><br />
+          <input type="password" id="password" name="password" autocomplete="current-password" placeholder="password" required>
 
           <button type="submit">Log in</button>
           <button
             type="button"
             class="new-account"
-            onclick="window.location.href='register.html'"
-          >
+            onclick="window.location.href='register.html'">
             Create New Account
           </button>
         </form>
       </div>
     </div>
+
+    
   </body>
 </html>

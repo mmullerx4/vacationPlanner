@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Activity Planner| Activity Entry</title>
-    <script type="module" crossorigin src="/assets/main-9rjq92tR.js"></script>
+    <script type="module" crossorigin src="/assets/main-BmFN5wd2.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/main-BgvQvCOD.css">
   </head>
   <body class="page-background">
@@ -14,42 +14,37 @@
     </header>
     <form id="activityForm">
       <label for="activityName">Activity Name:</label>
-      <input type="text" id="activityName" /><br /><br />
-      <label for="activityDescription">Activity Description:</label>
-      <input
-        type="text"
-        id="activityDescription"
-        name="activityDescription"
-      /><br /><br /><br /><br />
-
+      <input type="text" id="activityName" required/><br /><br />
+      <label for="activityDescription">Activity Description:</label><br>
+      <textarea id="activityDescription"
+      name="activityDescription" rows="8" columns="150" required>
+        </textarea><br /><br /><br /><br />
       <label for="activityDate">Date</label>
-      <input type="date" id="activityDate" name="activityDate" /><br /><br />
+      <input type="date" id="activityDate" name="activityDate" required/><br /><br />
       <label for="activityTime">Time:</label>
-      <input type="time" id="activityTime" name="activityTime" /><br /><br />
+      <input type="time" id="activityTime" name="activityTime" required/><br /><br />
       <label for="activityDuration">Activity Duration:</label>
       <input
         type="number"
         id="activityDuration"
         name="activityDuration"
         placeholder="0.5"
-      /><span> hrs</span><br /><br /><br /><br />
+      required/><span> hrs</span><br /><br /><br /><br />
 
-      <label for="address">Activity Location:</label>
-      <input type="address" id="address" name="address" /><br /><br />
+      <label for="address">Activity Location:</label><br>
+      <textarea id="address" name="address" rows="4" columns="20" required></textarea><br /><br />
       <label for="activityCost">Activity Cost: $</label>
       <input
         type="number"
         id="activityCost"
-        placeholder="25.00"
-      /><br /><br /><br />
+        placeholder="25.00" required/><br /><br /><br />
 
       <label for="parkingFee">Parking Fee:</label>
       <input
         type="number"
         id="parkingFee"
         name="parkingFee"
-        placeholder="5.00"
-      /><br /><br /><br /><br />
+        placeholder="5.00" required/><br /><br /><br /><br />
 
       <label for="organizerName">Organizer Name:</label>
       <input type="text" name="organizerName" /><br /><br />
@@ -59,5 +54,7 @@
       <button type="submit">Add Activity</button>
     </form>
     <footer></footer>
+
+    
   </body>
 </html>

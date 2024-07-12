@@ -2,7 +2,7 @@
 //from localStorage verifies credentials & allows signup for new user
 
 const predefinedManagers = [
-  { email: "manager1@example.com", password: "mgrpassword", role: "accountManager" },
+  { email: "manager1@example.com", password: "password", role: "accountManager" },
   { email: "manager2@example.com", password: "password", role: "accountManager" }
 ];
 
@@ -64,6 +64,6 @@ export async function handleSignup(event) {
   }
 }
 
-// //event listeners make sure your html forms have the correct IDs to match Javascript
+// //event listeners make sure your html forms have the correct IDs to match Javascript (moved to login.js)
 // document.getElementById("loginForm").addEventListener("submit", handleLogin);
 // document.getElementById("signupForm").addEventListener("submit", handleSignup);
