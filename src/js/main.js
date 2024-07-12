@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initActivityEntry();
   initCalendar();
   initDetailModal();
-  
 
   console.log("main script loaded and initialized");
 });
