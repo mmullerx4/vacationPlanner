@@ -9,7 +9,7 @@
   <!--On the correct date the calendar will display the activity name and the time-->
   <!--The user then click the activity for the details on activity-->
   <body>
-    <header><h2>Edit Activity Details</h2></header>
+    <header><h2>Our Activity Calendar</h2></header>
     <main>
       <div class="calendar">
         <div class="header"><!--calendar headers (days of week) --></div>
@@ -17,12 +17,15 @@
       </div>
     </main>
 
+<!--Note: Need to be able to click on the activity in the calendar to open modal-->
+
+
     <!--The user will highlight any day on the calendar and then click the weather button to see the weather for that day-->
     <button id="showWeather" onclick="showWeather()">Weather</button>
 
     <!--display only for manager view only-->
-    <button id="editActivity">Delete Activity></button>
-    <button id ="deleteActivity" onclick="deleteActivity()">Delete Activity</button>
+    <button id="editActivity" class="managerButton">Edit Activity</button>
+    <button id ="deleteActivity" class="managerButton" buttonclick="deleteActivity()">Delete Activity</button>
 
     <footer></footer>
 

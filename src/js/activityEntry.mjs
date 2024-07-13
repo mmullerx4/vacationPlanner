@@ -4,7 +4,6 @@ import { saveActivity } from "./activityStorage.mjs";
 export function initActivityEntry() {
   document.getElementById("activityForm").addEventListener("submit", function(event) {
       event.preventDefault(); //get rid of auto refresh page on submit
-      console.log("Form submitted");
       //get form values
       const activityName= document.getElementById("activityName").value;
       const activityDate= document.getElementById("activityDate").value;
@@ -16,6 +15,8 @@ export function initActivityEntry() {
       const parkingFee= document.getElementById("parkingFee").value;
       const organizerName= document.getElementById("organizerName").value;
       const organizerEmail= document.getElementById("organizerEmail").value;
+
+      console.log("Activity values gathered");
 
 //creates activity objects
     const activity = {
@@ -31,8 +32,14 @@ export function initActivityEntry() {
       organizerEmail: organizerEmail
     };
 
+    console.log("Activity objects created");
+
      saveActivity(activity);
+
+     console.log("Activity saved");
     });
+
+    
 
     document.addEventListener("DOMContentLoaded", () => {
       const form = document.querySelector("form");
