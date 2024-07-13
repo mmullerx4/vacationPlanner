@@ -2,14 +2,26 @@
 
 export function initDetailModal() {
   const modal = document.getElementById("activityModal");
-  const span = document.getElementsByClassName("close")[0];
+  const closeButton = document.querySelector(".close-button")
 
-  span.onclick = function() {
+
+  if (!closeButton) {
+    console.error("Close button not found");
+    return;
+  }
+
+  //function to close the modal
+  function closeModal() {
     modal.style.display = "none";
-  };
+    window.location.href = "../calendar.html";
+  }
+
+  closeButton.addEventListener("click", closeModal);
+
+
   window.onclick = function(event) {
     if (event.target === modal) {
-      modal.style.display = "none";
+      closeModal();
     }
 };
 
@@ -25,18 +37,18 @@ document.addEventListener("click", function(event) {
         const organizerEmail = event.target.dataset.organizerEmail;
 
         //Display activity details in a modal
-      const modal = document.getElementById("activityModal");
       const modalContent = document.getElementById("modalContent");
       modalContent.innerHTML = `
-      <p><strong>Description:</strong> ${description}<\p>
-      <p><strong>Duration:</strong> ${duration}<\p>
-      <p><strong>Location:</strong> ${address}<\p>
-      <p><strong>Cost:</strong> ${cost}<\p>
-      <p><strong>Parking Fee:</strong> ${parkingFee}<\p>
-      <p><strong>Organizer Name:</strong> ${organizerName}<\p>
-      <p><strong>Organizer Email:</strong> ${organizerEmail}<\p>
-        `;
-      modal.style.display = "block";
+        <p><strong>Description:</strong> ${description}</p>
+        <p><strong>Duration:</strong> ${duration}</p>
+        <p><strong>Location:</strong> ${address}</p>
+        <p><strong>Cost:</strong> ${cost}</p>
+        <p><strong>Parking Fee:</strong> ${parkingFee}</p>
+        <p><strong>Organizer Name:</strong> ${organizerName}</p>
+        <p><strong>Organizer Email:</strong> ${organizerEmail}</p>
+          `;
+        modal.style.display = "block";
       }
-  });
+    });
 }
+    

@@ -17,7 +17,7 @@ export function initActivityEntry() {
       const organizerName= document.getElementById("organizerName").value;
       const organizerEmail= document.getElementById("organizerEmail").value;
 
-//do I really need this?
+//creates activity objects
     const activity = {
       name: activityName,
       date: activityDate,
@@ -33,10 +33,25 @@ export function initActivityEntry() {
 
      saveActivity(activity);
     });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const form = document.querySelector("form");
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const activityName = document.querySelector("#activityName").value;
+        const activityTime = document.querySelector("#activityTime").value;
+
+        //ensure exist before accessing
+        if (!activityName || !activityTime) {
+          console.error("Activity name or time not found");
+          return;
+        }
+
+        window.location.href = "../calendar/index.html";
+
+        console.log("Form submitted", activityName, activityTime );
+
+      });
+    });
 }
-
-
-
- 
-
 
