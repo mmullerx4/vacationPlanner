@@ -17,6 +17,16 @@
   border: 1px solid #888;
   width: 80%;
 }
+.modal-content h2 {
+  margin-top: 0; /*removes default margin */
+}
+.modal-content h2 {
+  content: "activityName: ";
+  font-weight: bold;
+}
+.modal-content p {
+  margin-top: 10px; /*adjust */
+}
 .close {
   color: #aaa;
   float: right;

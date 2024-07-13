@@ -37,12 +37,16 @@ export async function handleLogin(event) {
   const password = document.getElementById("password").value;
   const response = await login({ email, password });
 
-  console.log("handleLogin values collected")
+function toggleManagerButtons() { 
+  document.getElementById("managerButtonsActivityEntry").style.display = "block";
+  document.getElementById("managerButtonsCalendar").style.display = "block";
+}
 
   if (response.success) {
     if (response.user.role === "accountManager") {
+      toggleManagerButtons();
       window.location.href = "./activityEntry/index.html";
-      console.log("login successful & redirection done.")
+      console.log("login successful as account manager & redirection done.")
     } else {
       window.location.href = "./calendar/index.html";
     }
