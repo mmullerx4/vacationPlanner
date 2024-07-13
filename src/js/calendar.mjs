@@ -70,6 +70,5 @@ export function initCalendar() {
 }
 
 
-
 // //example usage
 // //generateCalendar(2, 2024));

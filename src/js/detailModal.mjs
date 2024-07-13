@@ -2,11 +2,10 @@
 
 export function initDetailModal() {
   const modal = document.getElementById("activityModal");
-  const span = document.getElementById("close")[0];
-
+  const closeButton = document.getElementById("close");
 
   //function to close the modal
-  span.onclick = function() {
+  function closeModal() {
     modal.style.display = "none";
     window.location.href = "../calendar.html";
   }
