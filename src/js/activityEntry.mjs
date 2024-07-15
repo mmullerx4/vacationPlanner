@@ -2,13 +2,19 @@
 import { saveActivity } from "./activityStorage.mjs";
 
 export function initActivityEntry() {
+  console.log("initActivityEntry function called");
+  
   document.addEventListener("DOMContentLoaded", () => {
     console.log("DOMContentLoaded event fired");
 
     const activityForm = document.getElementById("activityForm");
       console.log("activityForm:", activityForm);
 
-    if (activityForm) {
+      if (!activityForm) {
+        console.error("Activity form not found");
+        return;
+      }    
+
       activityForm.addEventListener("submit", function(event) {
         event.preventDefault(); //get rid of auto refresh page on submit
         console.log("Form submit event fired");
@@ -62,13 +68,14 @@ export function initActivityEntry() {
         saveActivity(activity);
         console.log("Activity saved");
 
-        console.log("Redirecting to calendar page")
+        activityForm.reset();
+
         window.location.href = "../calendar/index.html";
-        console.log("Form submitted", activityName, activityTime);
-     });
-    } else {
-      console.error("Activity form not found");
-    }
+
+        // console.log("Redirecting to calendar page")
+        // window.location.href = "../calendar/index.html";
+        // console.log("Form submitted", activityName, activityTime);
+     }); 
   });
 }
     
