@@ -49,7 +49,7 @@ export function initCalendar() {
         activityElement.textContent = `${activity.name} ($activity.time})`;
         activityElement.dataset.description = activity.description;
         activityElement.dataset.duration = activity.duration;
-        activityElement.dataset.address = activity.address;
+        activityElement.dataset.activityAddress = activity.address;
         activityElement.dataset.cost = activity.cost;
         activityElement.dataset.parkingFee = activity.parkingFee;
         activityElement.dataset.organizerName = activity.organizerName;

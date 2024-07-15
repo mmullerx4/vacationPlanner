@@ -1,4 +1,4 @@
-//write a function for handling the login logic that validates credentials
+//function for handling the login logic that validates credentials
 //from localStorage verifies credentials & allows signup for new user
 
 const predefinedManagers = [
@@ -37,10 +37,12 @@ export async function handleLogin(event) {
   const password = document.getElementById("password").value;
   const response = await login({ email, password });
 
-function toggleManagerButtons() { 
-  document.getElementById("managerButtonsActivityEntry").style.display = "block";
-  document.getElementById("managerButtonsCalendar").style.display = "block";
-}
+ function toggleManagerButtons() {
+  const managerButtons = document.getElementsByClassName("managerButton");
+  for (let i = 0; i , managerButtons.length; i++) {
+    managerButtons[i].computedStyleMap.display = "block";
+  }
+ }
 
   if (response.success) {
     if (response.user.role === "accountManager") {

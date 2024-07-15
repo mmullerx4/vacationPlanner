@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Activity Planner| Activity Entry</title>
-    <script type="module" crossorigin src="/assets/main-CeW09gMS.js"></script>
+    <script type="module" crossorigin src="/assets/main-C2rSx-j1.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/main-D9EvMJg1.css">
   </head>
   <body class="page-background">
@@ -17,7 +17,7 @@
       <input type="text" id="activityName" required/><br /><br />
       <label for="activityDescription">Activity Description:</label><br>
       <textarea id="activityDescription"
-      name="activityDescription" rows="8" columns="150" required>
+      name="activityDescription" rows="8" cols="60" required>
         </textarea><br /><br /><br /><br />
       <label for="activityDate">Date</label>
       <input type="date" id="activityDate" name="activityDate" required/><br /><br />
@@ -31,8 +31,8 @@
         placeholder="0.5"
       required/><span> hrs</span><br /><br /><br /><br />
 
-      <label for="address">Activity Location:</label><br>
-      <textarea id="address" name="address" rows="4" columns="20" required></textarea><br /><br />
+      <label for="activityAddress">Activity Location:</label><br>
+      <textarea id="activityAddress" name="activityAddress" rows="4" cols="30" required></textarea><br /><br />
       <label for="activityCost">Activity Cost: $</label>
       <input
         type="number"
@@ -47,9 +47,9 @@
         placeholder="5.00" required/><br /><br /><br /><br />
 
       <label for="organizerName">Organizer Name:</label>
-      <input type="text" name="organizerName" /><br /><br />
+      <input type="text" id="organizerName" name="organizerName" /><br /><br />
       <label for="organizerEmail">Organizer email</label>
-      <input type="email" id="organizerEmail" /><br /><br /><br /><br />
+      <input type="email" id="organizerEmail" name="organizerEmail"/><br /><br /><br /><br />
 
       <button type="submit">Add Activity</button>
     </form>
