@@ -3,11 +3,15 @@ import { saveActivity } from "./activityStorage.mjs";
 
 export function initActivityEntry() {
   document.addEventListener("DOMContentLoaded", () => {
+    console.log("DOMContentLoaded event fired");
+
     const activityForm = document.getElementById("activityForm");
+      console.log("activityForm:", activityForm);
 
     if (activityForm) {
       activityForm.addEventListener("submit", function(event) {
         event.preventDefault(); //get rid of auto refresh page on submit
+        console.log("Form submit event fired");
 
         //get form values
         const activityName= document.getElementById("activityName").value;
@@ -21,6 +25,18 @@ export function initActivityEntry() {
         const organizerName= document.getElementById("organizerName").value;
         const organizerEmail= document.getElementById("organizerEmail").value;
 
+        console.log("Form values:", {
+          activityName,
+          activityDate,
+          activityTime,
+          activityDescription,
+          activityDuration,
+          activityAddress,
+          activityCost,
+          parkingFee,
+          organizerName,
+          organizerEmail
+        });
 
         if (!activityName || !activityTime) {
           console.error("Activity name or time not found");
@@ -41,6 +57,8 @@ export function initActivityEntry() {
           organizerEmail: organizerEmail
         };
 
+        console.log("Activity object created", activity);
+        
         saveActivity(activity);
         console.log("Activity saved");
 
