@@ -39,10 +39,10 @@ export function initCalendar() {
      }
 
      //Retrieve activities from storage module. Iterates through each activity using 'formatDate' and display in correct cell. Then creates activityElement for each activity & appends to cell
-     const activities = getActivites();
+     const activities = getActivities();
      activities.forEach(activity => {
       const activityDate = formatDate(activity.date);
-      const cell = document.querySelector(`.date[date-date="${activityDate}]`);
+      const cell = document.querySelector(`.date[data-date="${activityDate}]`);
       if (cell) {
         const activityElement = document.createElement("div");
         activityElement.classList.add("activity");
@@ -58,7 +58,6 @@ export function initCalendar() {
       }
      });
   }
-    
 
   //Listens for the 'DOMContentLoaded' event to ensure DOM is fully loaded before initializing calendar. Then calls the function with current month and year.
   document.addEventListener("DOMContentLoaded", () => {

@@ -48,7 +48,7 @@ export async function handleLogin(event) {
     if (response.user.role === "accountManager") {
       toggleManagerButtons();
       window.location.href = "./activityEntry/index.html";
-      console.log("login successful as account manager & redirection done.")
+      console.log("login successful as account manager & redirection done.");
     } else {
       window.location.href = "./calendar/index.html";
     }

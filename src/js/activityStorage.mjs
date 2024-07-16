@@ -2,14 +2,14 @@
 
 export function saveActivity
 (activity) {
-  let activities = JSON.parse(localStorage.getItem("activities")) || []; //creates a object array even if empty
+  let activities = JSON.parse(localStorage.getItem("activities")) || []; //a new object that is a JSON array even if empty
   activities.push(activity);
-  localStorage.setItem("activities", JSON.stringify(activities)); //converts back into array after the addition a activity & saves
+  localStorage.setItem("activities", JSON.stringify(activities)); //makes each piece of JSON array a string
   console.log("activity saved: ", activity);
 }
 
 export function getActivities() {
-  return JSON.parse(localStorage.getItem("activities")) || [];
+  return JSON.parse(localStorage.getItem("activities")) || []; //parses string into a JSON array
 }
 
 export function deleteActivity(activityId) {

@@ -72,9 +72,7 @@ export function initActivityEntry() {
 
         window.location.href = "../calendar/index.html";
 
-        // console.log("Redirecting to calendar page")
-        // window.location.href = "../calendar/index.html";
-        // console.log("Form submitted", activityName, activityTime);
+        
      }); 
   });
 }

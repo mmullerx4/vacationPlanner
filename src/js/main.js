@@ -8,13 +8,19 @@ import { saveActivity, getActivities } from "./activityStorage.mjs";
 
 
 //initialization functions
-document.addEventListener("DOMContentLoaded", () => {
-  initLogin();
-  initActivityEntry();
-  initCalendar();
-  initDetailModal();
+document.addEventListener("DOMContentLoaded", async () => {
+  try {
+    initLogin();
+    initActivityEntry();
+    initDetailModal();
 
-  console.log("main script loaded and initialized");
+    //wait for activities to be loaded
+    await initCalendar();
+
+    console.log("main script loaded and initialized");
+  } catch (error) {
+    console.error("Error initializing:", error);
+  }
 });
 
 //prepopulate 3 activities
@@ -57,6 +63,28 @@ const initialActivities = [
   }
 ];
 
-if (!getActivities().length) {
-  initialActivities.forEach(activity => saveActivity(activity));
+async function checkInitialActivities() {
+  try {
+  const activities = await getActivities(); //get current list of activities
+   
+  if (activities.length === 0) { //if none save the above 3
+    console.log("starting to save initial activities ...")
+    initialActivities.forEach(activity => {
+      try {
+        saveActivity(activity);
+        console.log(`Saved activity: ${activity.activityName}`);
+      } catch (error) {
+        console.error(`Error saving activity ${activity.activityName}`, error);
+      }
+    });
+    console.log("Initial activities checked and saved if no current");
+  } else {
+    console.log("Initial activities already exist");
+  }
+  } catch (error) {
+    console.error("Error checking or saving initial activities:",  error);
+  }
 }
+
+//error handling
+checkInitialActivities();
