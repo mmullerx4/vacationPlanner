@@ -3,7 +3,7 @@ import { initLogin } from "./login.js";
 import { initActivityEntry } from "./activityEntry.mjs";
 import { initCalendar } from "./calendar.mjs";
 import { initDetailModal } from "./detailModal.mjs";
-import "./weather.js";
+import { initWeather } from "./weather.mjs";
 import { saveActivity, getActivities } from "./activityStorage.mjs";
 
 
@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     initLogin();
     initActivityEntry();
     initDetailModal();
+    initWeather();
 
     //wait for activities to be loaded
     await initCalendar();
