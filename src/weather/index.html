@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Activity Planner| Home</title>
+    <link rel="stylesheet" href="css/style.css" />
+    
+  </head>
+
+  <body>
+    <div class="begin">
+      <div class="login container">
+        <h1>Weather Request</h1>
+        <form id="weatherForm">
+          <label for="activityCity">Activity City Name:</label>
+          <br>
+          <input type="text" id="activityCity" name="activityCity"  placeholder="City" required><br><br><br>
+
+          <label for="activityState">Activity City Name:</label>
+          <br>
+          <input type="text" id="activityState" name="activityState"  placeholder="Sate" required><br><br><br>
+
+          <label for="activityDate">Activity Date:</label>
+          <br>
+          <input type="date" id="activityDate" name="activityDate"  placeholder="City" required>
+
+          <button type="submit">Get Weather</button>
+        </form>
+
+        <div id="weatherResult"></div>
+      </div>
+    </div>
+
+    <script src="/js/main.js" type="module"></script>
+    
+  </body>
+</html>
