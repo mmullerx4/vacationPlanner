@@ -1,3 +1,20 @@
+/*body*/
+.lilita-one-regular {
+  font-family: "Lilita One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+/*Opening Login index*/
+#mainIndex {
+  background-image: url('../images/beach-bali-2698078_1280-pixabay.jpg');
+}
+h1 {
+  text-align: center;
+}
+.login-container {
+  text-align: center;
+}
+/*Details-modal-index*/
 .modal {
   display: none;
   position: fixed;

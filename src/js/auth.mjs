@@ -40,7 +40,7 @@ export async function handleLogin(event) {
  function toggleManagerButtons() {
   const managerButtons = document.getElementsByClassName("managerButton");
   for (let i = 0; i , managerButtons.length; i++) {
-    managerButtons[i].computedStyleMap.display = "block";
+    managerButtons[i].computedStyleMap.display = "block"; //list of all the CSS property values
   }
  }
 
