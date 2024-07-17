@@ -12,12 +12,14 @@
 
 /* Home Login-in view */
 /*body*/
-.lilita-one-regular {
-  font-family: "Lilita One", sans-serif;
-  font-weight: 400;
+
+body {
+  font-family: "Libre Franklin", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
   font-style: normal;
 }
-/* Opening Login index */
+/* Main view - Login */
 #mainIndex {
   background-image: url('../images/beach-bali-2698078_1280-pixabay.jpg');
   background-color: skyblue; /*if image not avail.*/
@@ -37,9 +39,7 @@ h1 {
 .login-container {
   margin-top: 4em;
   text-align: center;
-  font-family: "Lilita One", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+  
 }
 .login-container button {
   font-size: .7em;
@@ -49,10 +49,23 @@ h1 {
   padding-right: 7px;
   margin: .4em;
 }
-/* Opening Login index */
+/* Activity Entry View */
+.activty-entry-background {
+  margin: 0;
+}
+#activ-entry-header {
+  height: 100%;
+  
+}
+#activ-entry-header img {
+  width: 100%;
+  height: 15em;
+  object-fit: cover;
+  object-position: top left;
+  
+}
 
-
-/*Details-modal-index*/
+/*Details-modal-index View*/
 .modal {
   display: none;
   position: fixed;
@@ -105,4 +118,15 @@ h1 {
   #mainIndex {
     background-size: cover;
   }
+  #activ-entry-header img {
+    
+    height: 35em;
+    object-fit: cover;
+    object-position: 20% 80%;
+    
+  }
+
+
+
+
 }
