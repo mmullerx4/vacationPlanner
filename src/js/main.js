@@ -15,9 +15,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     initDetailModal();
     initWeather();
 
-    //wait for activities to be loaded
-    await initCalendar();
-
     console.log("main script loaded and initialized");
   } catch (error) {
     console.error("Error initializing:", error);
@@ -66,12 +63,12 @@ const initialActivities = [
 
 async function checkInitialActivities() {
   try {
-  const activities = await getActivities(); //get current list of activities
+  const activities = await getActivities(); //get current list of activities from local storage
    
-  if (activities.length === 0) { //if none save the above 3
-    console.log("starting to save initial activities ...")
+  if (activities.length === 0) { 
+    console.log("Save startup 'initial activities' for testing because no previous activities.")
     initialActivities.forEach(activity => {
-      try {
+      try { //feedback & error handling
         saveActivity(activity);
         console.log(`Saved activity: ${activity.activityName}`);
       } catch (error) {
@@ -87,5 +84,9 @@ async function checkInitialActivities() {
   }
 }
 
-//error handling
+
 checkInitialActivities();
+ //wait for activities to be loaded
+ initCalendar();
+ 
+ console.log("calendar loaded");

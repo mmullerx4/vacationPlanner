@@ -1,19 +1,57 @@
+/* 
+
+<uniquifier>: Use a unique and descriptive class name
+ <weight>: Use a value from 100 to 900 
+
+ .libre-franklin-<uniquifier> {
+  font-family: "Libre Franklin", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}*/
+
+/* Home Login-in view */
 /*body*/
 .lilita-one-regular {
   font-family: "Lilita One", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
-/*Opening Login index*/
+/* Opening Login index */
 #mainIndex {
   background-image: url('../images/beach-bali-2698078_1280-pixabay.jpg');
+  background-color: skyblue; /*if image not avail.*/
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 127em;
 }
 h1 {
+  font-family: "Lilita One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
   text-align: center;
+  color: white;
+  margin-top: 4em;
 }
 .login-container {
+  margin-top: 4em;
   text-align: center;
+  font-family: "Lilita One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
+.login-container button {
+  font-size: .7em;
+  border-radius: 25px;
+  border: none;
+  padding: 5px;
+  padding-right: 7px;
+  margin: .4em;
+}
+/* Opening Login index */
+
+
 /*Details-modal-index*/
 .modal {
   display: none;
@@ -55,4 +93,16 @@ h1 {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+
+
+/* ****************************************** */
+/* **********FOR LARGER SCREENS************** */
+/* ****************************************** */
+@media only screen and (min-width: 641px) {
+
+  #mainIndex {
+    background-size: cover;
+  }
 }
