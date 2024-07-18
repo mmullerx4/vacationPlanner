@@ -1,5 +1,5 @@
 //Logic for detail modal
-
+//Researched information and then chatgpt
 export function initDetailModal() {
   document.addEventListener("DOMContentLoaded", function() { //DOM ensures executes only when fully loaded.
     const modal = document.getElementById("activityModal");
@@ -11,7 +11,7 @@ export function initDetailModal() {
     }
     
     //function to close the modal
-    function closeModal() { //closes when clicking "x" and outside it.
+    function closeModal() { //display of "x".
       modal.style.display = "none";
       window.location.href = "../calendar.html";
     }

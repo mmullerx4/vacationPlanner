@@ -1,17 +1,17 @@
 //Logic for activity entry
-import { saveActivity } from "./activityStorage.mjs";
+import { saveActivity } from "./activityStorage.mjs"; //importing to be able to save at the end this file.
 
 export function initActivityEntry() {
   console.log("initActivityEntry function called");
   
-  document.addEventListener("DOMContentLoaded", () => {
-    console.log("DOMContentLoaded event fired");
+  document.addEventListener("DOMContentLoaded", () => { //DOMContentLoaded fires when html loaded with script tags. Does not wait for imgs, subframes, & async.
+    console.log("DOMContentLoaded event fired"); //error handling - trouble shooting
 
     const activityForm = document.getElementById("activityForm");
       console.log("activityForm:", activityForm);
 
       if (!activityForm) {
-        console.error("Activity form not found");
+        console.error("Activity form not found"); //error handling
         return;
       }    
 
@@ -31,7 +31,7 @@ export function initActivityEntry() {
         const organizerName= document.getElementById("organizerName").value;
         const organizerEmail= document.getElementById("organizerEmail").value;
 
-        console.log("Form values:", {
+        console.log("Form values:", { //check to see if got values
           activityName,
           activityDate,
           activityTime,
@@ -44,12 +44,12 @@ export function initActivityEntry() {
           organizerEmail
         });
 
-        if (!activityName || !activityTime) {
+        if (!activityName || !activityTime) { //error handling
           console.error("Activity name or time not found");
           return;
         }
 
-//creates activity objects
+//creates activity objects 
         const activity = {
           name: activityName,
           date: activityDate,
@@ -68,7 +68,7 @@ export function initActivityEntry() {
         saveActivity(activity);
         console.log("Activity saved");
 
-        activityForm.reset();
+        activityForm.reset(); //reset form for next entry
 
         window.location.href = "../calendar/index.html";
 

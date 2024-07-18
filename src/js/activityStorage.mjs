@@ -1,5 +1,5 @@
 //Module for storing activities
-
+//chatgpt fine tuned me here
 export function saveActivity
 (activity) {
   let activities = JSON.parse(localStorage.getItem("activities")) || []; //a new object that is a JSON array even if empty

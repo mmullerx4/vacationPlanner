@@ -61,6 +61,7 @@ const initialActivities = [
   }
 ];
 
+//Help from chatgpt on error handling & troubleshooting
 async function checkInitialActivities() {
   try {
   const activities = await getActivities(); //get current list of activities from local storage
@@ -86,7 +87,7 @@ async function checkInitialActivities() {
 
 
 checkInitialActivities();
- //wait for activities to be loaded
- initCalendar();
+//this placed right?
+initCalendar();
  
  console.log("calendar loaded");

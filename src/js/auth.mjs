@@ -1,14 +1,15 @@
 //function for handling the login logic that validates credentials
 //from localStorage verifies credentials & allows signup for new user
 
+
 const predefinedManagers = [
   { email: "manager1@example.com", password: "password", role: "accountManager" },
   { email: "manager2@example.com", password: "password", role: "accountManager" }
 ];
-
+//got help from chatgpt on this code.
 let users = JSON.parse(localStorage.getItem("users")) || predefinedManagers;
 
-export async function login(credentials) {
+export async function login(credentials) { 
   const user = users.find(
     user => user.email === credentials.email && user.password === credentials.password
   );
@@ -40,13 +41,13 @@ export async function handleLogin(event) {
  function toggleManagerButtons() {
   const managerButtons = document.getElementsByClassName("managerButton");
   for (let i = 0; i , managerButtons.length; i++) {
-    managerButtons[i].computedStyleMap.display = "block"; //list of all the CSS property values
+    managerButtons[i].computedStyleMap.display = "block"; //if determined a manager make an array for css to work with these to display or not.
   }
  }
 
   if (response.success) {
     if (response.user.role === "accountManager") {
-      toggleManagerButtons();
+      toggleManagerButtons(); //toggle buttons in html
       window.location.href = "./activityEntry/index.html";
       console.log("login successful as account manager & redirection done.");
     } else {

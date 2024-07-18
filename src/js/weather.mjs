@@ -1,7 +1,7 @@
 //Logic for weather
 
 //first get the city and date values from the user submit
-
+//some fine tuning by chatgpt
  export function initWeather() {
 
    document.getElementById("weatherForm").addEventListener("submit", function(event) {
@@ -12,7 +12,7 @@
      const city= document.getElementById("activityCity").value;
      const state= document.getElementById("activityState").value;
      const date= document.getElementById("activityDate").value;
-     const apiKey = "api...";
+     const apiKey = "f4f5709c3a974e43be4dab542cb448fa";
 
      fetchWeatherByCity(city, "", apiKey);
    });
@@ -44,4 +44,4 @@
   }
 }
 
-  
+

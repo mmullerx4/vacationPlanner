@@ -1,5 +1,5 @@
 //Logic for calendar
-//got total help here from chatgpt
+//got total help here from chatgpt on calendar day, etc.
 import { getActivities } from  "./activityStorage.mjs";
 import { formatDate } from "./util.mjs";
 
