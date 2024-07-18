@@ -88,6 +88,6 @@ async function checkInitialActivities() {
 
 checkInitialActivities();
 //this placed right?
-initCalendar();
+
  
- console.log("calendar loaded");
+console.log("calendar loaded");
