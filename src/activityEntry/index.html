@@ -6,7 +6,7 @@
     <title>Activity Planner| Activity Entry</title>
     <link rel="stylesheet" href="../css/style.css" />
   </head>
-  <body class="activty-entry-background">
+  <body class="activity-entry">
     <header id="activ-entry-hero" class="image-container">
       <img src="../images/mt-rushmore-mountain-8322610_1280-pixabay.jpg" alt="Mount Rushmore" width="500" height="300">
       <h2 class="overlay-text">Add an Activity</h2>
@@ -19,7 +19,7 @@
       <input type="text" id="activityName" required/><br /><br /><br><br>
       <label for="activityDescription">Activity Description:</label><br>
       <textarea id="activityDescription"
-      name="activityDescription" rows="8" cols="50" required>
+      name="activityDescription" rows="8" cols="45" required>
         </textarea><br /><br /><br /><br />
       <label for="activityDate">Date</label>
       <input type="date" id="activityDate" name="activityDate" required/><br /><br />
@@ -55,10 +55,9 @@
 
       <button type="submit">Add Activity</button>
     </form>
-    <footer></footer>
+    <footer class="footer"></footer>
 
     <script src="../js/main.js" type="module"></script>
     <script src="../js/activityEntry.js" type="module"></script>
-    
   </body>
 </html>

@@ -52,9 +52,9 @@ h1, h2, h3 {
 }
 
 /* ************Activity Entry View********* */
-.activty-entry-background {
+.activity-entry {
   margin: 0;
-  background-color: white;
+  background-color: #F0F6FA;
 }
 #activ-entry-hero {
   height: 100%;
@@ -74,8 +74,12 @@ h1, h2, h3 {
   object-fit: cover;
   object-position: 20% 80%;
 }
+#activityForm {
+  margin: 3em;
+ }
+ 
 
-/* **********Text overlay for Activity Entry & Calendar******* */
+/* ********** TEXT OVERLAY FOR ACTIVITY ENTRY & CALENDAR ******* */
 .image-container {
   position: relative;
   display: inline-block;
@@ -97,10 +101,7 @@ h1, h2, h3 {
   font-size: 20px;
   text-align: center;
  } 
- #activityForm {
-  margin: 2em;
- }
- 
+
 /* **********Details-modal-index View******* */
 .modal {
   display: none;
@@ -142,6 +143,10 @@ h1, h2, h3 {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+.footer {
+  height: 5em;
+  background: #2F5EA6;
 }
 
 
