@@ -10,8 +10,7 @@
   font-style: normal;
 }*/
 
-/* Home Login-in view */
-/*body*/
+/* ***************All****************** */
 
 body {
   font-family: "Libre Franklin", sans-serif;
@@ -19,16 +18,7 @@ body {
   font-weight: 100;
   font-style: normal;
 }
-/* Main view - Login */
-#mainIndex {
-  background-image: url('../images/beach-bali-2698078_1280-pixabay.jpg');
-  background-color: skyblue; /*if image not avail.*/
-  height: 500px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 127em;
-}
-h1 {
+h1, h2, h3 {
   font-family: "Lilita One", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -36,6 +26,17 @@ h1 {
   color: white;
   margin-top: 4em;
 }
+
+/* **************Main view - Login*********** */
+#mainIndex {
+  background-image: url('../images/beach-bali-2698078_1280-pixabay.jpg');
+  background-color: skyblue; /* if image not avail.*/
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 127em;
+}
+
 .login-container {
   margin-top: 4em;
   text-align: center;
@@ -49,23 +50,58 @@ h1 {
   padding-right: 7px;
   margin: .4em;
 }
-/* Activity Entry View */
+
+/* ************Activity Entry View********* */
 .activty-entry-background {
   margin: 0;
+  background-color: white;
 }
-#activ-entry-header {
+#activ-entry-hero {
   height: 100%;
-  
 }
-#activ-entry-header img {
-  width: 100%;
+#activ-entry-hero img {
   height: 15em;
   object-fit: cover;
-  object-position: top left;
+  object-position: 20% 50%; 
+  padding-bottom: 1em;
+}
+#activ-entry-subhero {
+  width: 100%;
   
 }
+#activ-entry-subhero img {
+  height: 5em;
+  object-fit: cover;
+  object-position: 20% 80%;
+}
 
-/*Details-modal-index View*/
+/* **********Text overlay for Activity Entry & Calendar******* */
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+ .image-container img {
+  display: block;
+  height: auto;
+ }
+ .overlay-text {
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  color: #444343;
+  font-weight: bold;
+  background-color: #fff;
+  border-radius: 2px;
+  padding: 10px 20px;
+  font-size: 20px;
+  text-align: center;
+ } 
+ #activityForm {
+  margin: 2em;
+ }
+ 
+/* **********Details-modal-index View******* */
 .modal {
   display: none;
   position: fixed;
@@ -115,18 +151,39 @@ h1 {
 /* ****************************************** */
 @media only screen and (min-width: 641px) {
 
+  /* ******(Large) Main view - Login********* */
   #mainIndex {
     background-size: cover;
   }
-  #activ-entry-header img {
-    
-    height: 35em;
+
+  /* ******(Large) Activity Entry View********** */
+  #activ-entry-hero img {
+    width: 100%;
+    height: 30em;
+    object-fit: cover;
+    object-position: 20% 35%;
+    padding-bottom: 2em;
+  }
+  #activ-entry-subhero img {
+    width: 100%;
+    height: 12em;
     object-fit: cover;
     object-position: 20% 80%;
-    
   }
 
-
+/* *****(Large) Text overlay for Activity Entry & Calendar******* */
+.image-container {
+  display: block;
+}
+.overlay-text {
+  top: 5%;
+  left: 52%;
+  border-radius: 5px;
+}
+#activityForm {
+  margin-top: 7em;
+  margin-left: 35em;
+ }
 
 
 }

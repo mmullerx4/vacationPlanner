@@ -15,6 +15,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     initDetailModal();
     initWeather();
 
+    //initCalendar();
+
     console.log("main script loaded and initialized");
   } catch (error) {
     console.error("Error initializing:", error);
