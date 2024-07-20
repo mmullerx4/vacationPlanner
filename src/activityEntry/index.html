@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Activity Planner| Activity Entry</title>
+    <title>Activity Planner | Activity Entry</title>
     <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body class="activity-entry">
@@ -33,12 +33,19 @@
         placeholder="0.5"
       required/><span> hrs</span><br /><br /><br /><br />
 
-      <label for="activityAddress">Activity Location:</label><br>
-      <textarea id="activityAddress" name="activityAddress" rows="4" cols="30" required></textarea><br /><br />
+      <label for="activityStreet">Street Address:</label><br>
+      <input type="text" id="activityStreet" name="activityStreet" required/><br /><br />
+      <label for="activityCity">City:</label><br>
+      <input type="text" id="activityCity" name="activityCity" required/><br /><br />
+      <label for="activityState">State:</label><br>
+      <input type="text" id="activityState" name="activityState" required/><br /><br />
+      <label for="activityZip">Zip:</label><br>
+      <input type="text" id="activityZip" name="activityZip" required/><br /><br />
+
       <label for="activityCost">Activity Cost: $</label>
       <input
         type="number"
-        id="activityCost"
+        id="activityCost" name="activityCost"
         placeholder="25.00" required/><br /><br /><br />
 
       <label for="parkingFee">Parking Fee:</label>

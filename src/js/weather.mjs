@@ -12,7 +12,7 @@
      const city= document.getElementById("activityCity").value;
      const state= document.getElementById("activityState").value;
      const date= document.getElementById("activityDate").value;
-     const apiKey = "f4f5709c3a974e43be4dab542cb448fa";
+     const apiKey = "?";
 
      fetchWeatherByCity(city, "", apiKey);
    });
@@ -33,7 +33,7 @@
     }
    }
 
-   function displayWeatherData(data, date) {
+   function displayWeatherData(data, date) {  //this function not being used ... ??
     const weatherResult = document.getElementById("weatherResult");
     const weather = data.data[0]; //access the first (& prob only) item in the data array
 

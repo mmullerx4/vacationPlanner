@@ -1,5 +1,8 @@
 //Logic for calendar
-//got total help here from chatgpt on calendar day, etc.
+//Creates a calendar for the specified month and year of activities. Days of the week and correct number of days in the month.
+//activities are fetched from storage and placed in correct cell of calendar (name & time).
+//With a check weather button that prompts for city, state, date.
+
 import { getActivities } from  "./activityStorage.mjs";
 import { formatDate } from "./util.mjs";
 
@@ -42,11 +45,14 @@ export function initCalendar() {
      const activities = getActivities();
      activities.forEach(activity => {
       const activityDate = formatDate(activity.date);
-      const cell = document.querySelector(`.date[data-date="${activityDate}]`);
+      const cell = document.querySelector(`.date[data-date="${activityDate}"]`);
       if (cell) {
         const activityElement = document.createElement("div");
         activityElement.classList.add("activity");
-        activityElement.textContent = `${activity.name} ($activity.time})`;
+        activityElement.innerHTML = `
+        ${activity.name} (${activity.time})
+        <button class="weatherButton">Get Weather</button>
+        `;
         activityElement.dataset.description = activity.description;
         activityElement.dataset.duration = activity.duration;
         activityElement.dataset.activityAddress = activity.address;
@@ -54,10 +60,21 @@ export function initCalendar() {
         activityElement.dataset.parkingFee = activity.parkingFee;
         activityElement.dataset.organizerName = activity.organizerName;
         activityElement.dataset.organizerEmail = activity.organizerEmail;
+        activityElement.dataset.city = activity.city;
+        activityElement.dataset.state = activity.state;
+        activityElement.dataset.date = activity.date;
+
+        activityElement.querySelector(".weatherButton").addEventListener("click", () => {
+          document.getElementById("weatherForm").style.display = "block";
+          document.getElementById("activityCity").value = activity.city;
+          document.getElementById("activityState").value = activity.state;
+          document.getElementById("activityDate").value = activity.date;
+        });
         cell.appendChild(activityElement);
       }
      });
   }
+  
 
   //Listens for the 'DOMContentLoaded' event to ensure DOM is fully loaded before initializing calendar. Then calls the function with current month and year.
   document.addEventListener("DOMContentLoaded", () => {
@@ -65,10 +82,6 @@ export function initCalendar() {
       generateCalendar(today.getMonth(), today.getFullYear());
       console.log("Calendar generated");
     });
-
 }
 
 
-
-// //example usage
-// //generateCalendar(2, 2024));

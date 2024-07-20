@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     initDetailModal();
     initWeather();
 
-    //initCalendar();
+    initCalendar(); //does this need an await?
 
     console.log("main script loaded and initialized");
   } catch (error) {

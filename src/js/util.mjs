@@ -1,7 +1,8 @@
 //Utility functions
-//functions shared across modules
 
-//this function formats date to readable string
+//converts date string into JavaScript Date object
+//Extracts the year, month, day from date object
+//the month and day are two digits
 export function formatDate(date) {
   const d = new Date(date);
   const year = d.getFullYear();
