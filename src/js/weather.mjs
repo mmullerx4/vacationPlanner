@@ -5,21 +5,21 @@
  export function initWeather() {
 
    document.getElementById("weatherForm").addEventListener("submit", function(event) {
-     event.preventDefault(); //get rid of auto refresh page on submit
+     event.preventDefault(); //prevent auto-refresh on submit
      console.log("Form submit event fired");
   
      //get form values
      const city= document.getElementById("activityCity").value;
      const state= document.getElementById("activityState").value;
      const date= document.getElementById("activityDate").value;
-     const apiKey = "?";
+     const apiKey = "f4f5709c3a974e43be4dab542cb448fa";
 
-     fetchWeatherByCity(city, "", apiKey);
+     fetchWeatherByCity(city, state, date, apiKey);
    });
 
-   async function fetchWeatherByCity(city, state= "", apiKey) {
+   async function fetchWeatherByCity(city, state, date, apiKey) {
     const baseURL = "https://api.weatherbit.io/v2.0/current";
-    const url = `${baseURL}?city=${encodeURIComponent(city)}${state ? `,${encodeURIComponent(state)}` : ''}${country ? `&country=${encodeURIComponent(country)}` : ''}&key=${apiKey}&lang=en&units=M&include=minutely`;
+    const url = `${baseURL}?city=${encodeURIComponent(city)}${state ? `,${encodeURIComponent(state)}` : ''}&key=${apiKey}&lang=en&units=M&include=minutely`;
     
     try {
       const response = await fetch(url);
@@ -28,12 +28,13 @@
       }
       const data = await response.json();
       console.log(data);
+      displayWeatherData(data, date); // call displayWeatherData here
     } catch (error) {
       console.error("There has been a problem with your fetch operation:", error);
     }
    }
 
-   function displayWeatherData(data, date) {  //this function not being used ... ??
+   function displayWeatherData(data, date) { 
     const weatherResult = document.getElementById("weatherResult");
     const weather = data.data[0]; //access the first (& prob only) item in the data array
 

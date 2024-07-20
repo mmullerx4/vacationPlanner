@@ -7,7 +7,7 @@ import { getActivities } from  "./activityStorage.mjs";
 import { formatDate } from "./util.mjs";
 
 //calculates & generates calendar for month & year
-export function initCalendar() {
+export async function initCalendar() {
   function generateCalendar(month, year) {
     const daysInMonth = new Date(year, month + 1, 0).getDate(); //calculates the total number of days in particular month
     const firstDay = new Date(year, month, 1).getDay(); //retrieves the day of the week of the first day of the month

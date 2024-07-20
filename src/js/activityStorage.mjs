@@ -19,7 +19,7 @@ export function getActivities() {
 
 export function deleteActivity(activityId) {
   //Retrieve existing activities or initialize an empty array
-  const activities = JSON.parse(localStorage.getItem("activities")) || [];
+  let activities = JSON.parse(localStorage.getItem("activities")) || [];
 
   activities = activities.filter(activity => activity.id !== activityId); //filter out the activity to be deleted
 
