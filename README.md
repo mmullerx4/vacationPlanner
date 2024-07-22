@@ -1,8 +1,8 @@
 # Activity Planner
 
-Account Manager > Activity Entry > Calendar (view, edit, delete, get weather, view activity details)
+Account Manager > login > Activity Entry view > Calendar view (view, edit, delete, get weather, view activity details)
 
-Account User > view calendar (activity details & weather)
+Account User > login > Calendar view (activity details & weather)
 
 
 
@@ -17,5 +17,7 @@ Backup plan is to have user plug in city name and date for weather request.
 
 A new "user" can create an account. Then go through same process as a user.
 
+
+ohhh... before I make this big of a change. I want to make sure we are on the same page: When the account manager logins using login.js which should initiate auth.mjs it is determined that is a manager and has extra capabilities and is able to go to the activityEntry view and enter a new activity using activityEntry.js (initiates activityEntry.mjs). Upon submit of new activity uses calendar.js to initiate calendar.mjs to load in new activity or the manager can go directly to the calendar without adding a new activity. From the calendar view the manager view or edit activity and view the weather. FOR THE USER: The user logs in (login.js initiating auth.mjs) which takes them to the calendar view where they can view activity details (detailModal.js initiating detailModal.mjs) or view the weather (weather.js initiating weather.mjs).
 
 f4f5709c3a974e43be4dab542cb448fa

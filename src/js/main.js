@@ -1,4 +1,5 @@
 //Main entry point for initializing the app
+//import all necessary modules and functions.
 import { initLogin } from "./login.js";
 import { initActivityEntry } from "./activityEntry.mjs";
 import { initCalendar } from "./calendar.mjs";
@@ -7,26 +8,7 @@ import { initWeather } from "./weather.mjs";
 import { saveActivity, getActivities } from "./activityStorage.mjs";
 
 
-//initialization functions
-document.addEventListener("DOMContentLoaded", async () => {
-  try {
-    initLogin();
-    initActivityEntry();
-    initDetailModal();
-    initWeather();
-    await initCalendar(); //changed function to async and now works
-
-    console.log("main script loaded and initialized");
-
-    //check initial activities and then display them in console
-    await checkInitialActivities();
-    await displayActivitiesInConsole();
-  } catch (error) {
-    console.error("Error initializing:", error);
-  }
-});
-
-//prepopulate 3 activities
+//prepopulate 3 initial activities
 const initialActivities = [
     {
     id: "1",
@@ -78,28 +60,29 @@ const initialActivities = [
 ];
 
 //Help from chatgpt on error handling & troubleshooting
+//The next 2 functions are helper functions to handle prepopulating and displaying activities.
+
 async function checkInitialActivities() {
   try {
   const activities = await getActivities(); //get current list of activities from local storage
    
-  if (activities.length === 0) { 
-    console.log("Save startup 'initial activities' for testing because no previous activities.")
-    initialActivities.forEach(activity => {
-      try { //feedback & error handling
-        saveActivity(activity);
-        console.log(`Saved activity: ${activity.activityName}`);
-      } catch (error) {
-        console.error(`Error saving activity ${activity.activityName}`, error);
+    if (activities.length === 0) { 
+      console.log("Save startup 'initial activities' for testing because no previous activities.")
+      for (const activity of initialActivities) {
+        try { //feedback & error handling
+          await saveActivity(activity);
+          console.log(`Saved activity: ${activity.activityName}`);
+        } catch (error) {
+          console.error(`Error saving activity ${activity.activityName}`, error);
+        }
       }
-    });
-    console.log("Initial activities checked and saved if no current");
-  } else {
-    console.log("Initial activities already exist");
+    } else {
+      console.log("Initial activities already exist");
+    }
+    } catch (error) {
+      console.error("Error checking or saving initial activities:",  error);
+    }
   }
-  } catch (error) {
-    console.error("Error checking or saving initial activities:",  error);
-  }
-}
 
 async function displayActivitiesInConsole() {
   try {
@@ -109,5 +92,25 @@ async function displayActivitiesInConsole() {
     console.error("Error retrieving activities form local Storage:", error)
   }
 }
+
+//Main initialization
+//initializes all the modules and then runs the helper functions above.
+document.addEventListener("DOMContentLoaded", async () => {
+  try { //called when document fully loaded
+    initLogin();
+    initActivityEntry();
+    initDetailModal();
+    initWeather();
+    await initCalendar(); //changed function to async and now works
+
+    console.log("main script loaded and initialized");
+
+    //check initial activities and then display them in console
+    await checkInitialActivities();
+    await displayActivitiesInConsole();
+  } catch (error) {
+    console.error("Error initializing:", error);
+  }
+});
 
 

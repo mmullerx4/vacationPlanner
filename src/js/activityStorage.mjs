@@ -1,6 +1,6 @@
 //Module for storing activities
 //chatgpt fine tuned me here
-export function saveActivity
+export async function saveActivity
 (activity) {
   //Retrieve existing activities or initialize an empty array
   let activities = JSON.parse(localStorage.getItem("activities")) || []; 

@@ -14,6 +14,7 @@ export default defineConfig({
         activityEntry: resolve(__dirname, "src/activityEntry/index.html"),
         calendar: resolve(__dirname, "src/calendar/index.html"),
         detailsModal: resolve(__dirname, "src/details-modal/index.html"),
+        weather: resolve(__dirname, "src/weather/index.html"),
         // Add more entries only if main entry points.
       },
     },
