@@ -67,16 +67,19 @@ async function checkInitialActivities() {
   const activities = await getActivities(); //get current list of activities from local storage
    
     if (activities.length === 0) { 
-      console.log("Save startup 'initial activities' for testing because no previous activities.")
+      //1
+      console.log("Save startup 'initial activities' for testing because no previous activities.");
       for (const activity of initialActivities) {
         try { //feedback & error handling
           await saveActivity(activity);
+          //2
           console.log(`Saved activity: ${activity.activityName}`);
         } catch (error) {
           console.error(`Error saving activity ${activity.activityName}`, error);
         }
       }
     } else {
+      //3
       console.log("Initial activities already exist");
     }
     } catch (error) {
@@ -87,14 +90,16 @@ async function checkInitialActivities() {
 async function displayActivitiesInConsole() {
   try {
     const activities = await getActivities();
+    //4
     console.log("Activities in local Storage:", activities);
   } catch (error) {
-    console.error("Error retrieving activities form local Storage:", error)
+    console.error("Error retrieving activities from local Storage:", error)
   }
 }
 
 //Main initialization
 //initializes all the modules and then runs the helper functions above.
+console.log("main.js script loaded");
 document.addEventListener("DOMContentLoaded", async () => {
   try { //called when document fully loaded
     initLogin();
@@ -102,7 +107,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     initDetailModal();
     initWeather();
     await initCalendar(); //changed function to async and now works
-
+    //5
     console.log("main script loaded and initialized");
 
     //check initial activities and then display them in console
