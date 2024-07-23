@@ -102,25 +102,11 @@ h1, h2, h3 {
   text-align: center;
  } 
 /* **********Calendar View************ */
-/*.calendar {
-  display: grid;
-  grid-template-columns: repeat(7, 1r);
-  gap: 1px;
-}
-.header {
-  display: contents;
-}
-.header div {
-  font-weight: bold;
-  text-align: center;
-  padding: 10px;
-  background-color: #ddd;
-} */
- .header {
+/* .week-header {
   display: flex;
   justify-content: space-between;
  }
- .header div {
+ .week-header div {
   flex: 1;
   text-align: center;
   padding: 10px;
@@ -139,7 +125,43 @@ h1, h2, h3 {
   border: 1px solid #ccc;
   margin-top: 5px;
   padding: 5px;
+} */
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); /* 7 columns for days of the week */
+  grid-gap: 1px; /* Space between cells */
+ 
 }
+
+/* Week header */
+.week-header {
+  display: contents; /*Make header behave as part of grid */
+  
+}
+
+.week-header div {
+  background-color: #fff;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+  background-color: #f4f4f4; /* Background color */
+  font-weight: bold;
+  border: none;
+}
+
+/* Individual day cells */
+.date {
+  background-color: #fff; /* Background color for cells */
+  padding: 10px;
+  text-align: center; /* Center the text */
+  border: 1px solid #ddd; /* Border around cells */
+}
+
+.date:hover {
+  background-color: #f0f0f0; /* Hover effect */
+}
+
 /* **********Details-modal View******* */
 .modal {
   display: none;

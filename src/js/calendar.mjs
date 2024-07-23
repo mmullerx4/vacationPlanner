@@ -18,14 +18,14 @@ export async function initCalendar() {
 
     //Create headers for days of the week & appends them to calendarContainer
     const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-    const headerRow = document.createElement("div");
-    headerRow.classList.add("header");
+    const weekHeader = document.createElement("div");
+    weekHeader.classList.add("week-header");
     daysOfWeek.forEach(day => {
       const dayElement = document.createElement("div");
       dayElement.textContent = day;
-      headerRow.appendChild(dayElement);
+      weekHeader.appendChild(dayElement);
   });
-    calendarContainer.appendChild(headerRow);
+    calendarContainer.appendChild(weekHeader);
 
     //calculate number of cells needed in the grid (including empty cells)
     const totalCells = daysInMonth + firstDay;
@@ -41,6 +41,12 @@ export async function initCalendar() {
       calendarContainer.appendChild(cell);
      }
 
+     function formatTime24to12(time24) {
+      const [hour, minute] = time24.split(":").map(Number);
+      const period = hour >= 12 ? "PM" : "AM";
+      const hour12 = hour % 12 || 12; //convert to 12hr format
+      return `${hour12}:${String(minute).padStart(2, '0')} ${period}`;
+     }
      //Retrieve activities from storage module. Iterates through each activity using 'formatDate' and display in correct cell. Then creates activityElement for each activity & appends to cell
      const activities = getActivities();
      activities.forEach(activity => {
@@ -50,7 +56,7 @@ export async function initCalendar() {
         const activityElement = document.createElement("div");
         activityElement.classList.add("activity");
         activityElement.innerHTML = `
-        ${activity.name} (${activity.time})
+        ${activity.name} ${formatTime24to12(activity.time)}
         <button class="weatherButton">Get Weather</button>
         `;
         activityElement.dataset.description = activity.description;
