@@ -79,7 +79,7 @@ async function checkInitialActivities() {
         }
       }
     } else {
-      //3
+      //3 (1)
       console.log("Initial activities already exist");
     }
     } catch (error) {
@@ -90,7 +90,7 @@ async function checkInitialActivities() {
 async function displayActivitiesInConsole() {
   try {
     const activities = await getActivities();
-    //4
+    //4 (2)
     console.log("Activities in local Storage:", activities);
   } catch (error) {
     console.error("Error retrieving activities from local Storage:", error)
@@ -99,6 +99,7 @@ async function displayActivitiesInConsole() {
 
 //Main initialization
 //initializes all the modules and then runs the helper functions above.
+//5 (3)
 console.log("main.js script loaded");
 document.addEventListener("DOMContentLoaded", async () => {
   try { //called when document fully loaded
@@ -107,7 +108,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     initDetailModal();
     initWeather();
     await initCalendar(); //changed function to async and now works
-    //5
+    //6 (4)
     console.log("main script loaded and initialized");
 
     //check initial activities and then display them in console

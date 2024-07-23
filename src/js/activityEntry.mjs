@@ -25,7 +25,10 @@ export function initActivityEntry() {
         const activityTime= document.getElementById("activityTime").value;
         const activityDescription= document.getElementById("activityDescription").value;
         const activityDuration= document.getElementById("activityDuration").value;
-        const activityAddress= document.getElementById("activityAddress").value;
+        const activityStreet= document.getElementById("activityStreet").value;
+        const activityCity= document.getElementById("activityCity").value;
+        const activityState= document.getElementById("activityState").value;
+        const activityZip= document.getElementById("activityZip").value;
         const activityCost= document.getElementById("activityCost").value;
         const parkingFee= document.getElementById("parkingFee").value;
         const organizerName= document.getElementById("organizerName").value;
@@ -37,7 +40,10 @@ export function initActivityEntry() {
           activityTime,
           activityDescription,
           activityDuration,
-          activityAddress,
+          activityStreet,
+          activityCity,
+          activityState,
+          activityZip,
           activityCost,
           parkingFee,
           organizerName,
@@ -56,7 +62,10 @@ export function initActivityEntry() {
           time: activityTime,
           description: activityDescription,
           duration: activityDuration,
-          activityAddress: activityAddress,
+          activityStreet: activityStreet,
+          activityCity: activityCity,
+          activityState: activityState,
+          activityZip: activityZip,
           cost: activityCost,
           parkingFee: parkingFee,
           organizerName: organizerName,
