@@ -20,53 +20,53 @@ export function initActivityEntry() {
         console.log("Form submit event fired");
 
         //get form values
-        const activityName= document.getElementById("activityName").value;
-        const activityDate= document.getElementById("activityDate").value;
-        const activityTime= document.getElementById("activityTime").value;
-        const activityDescription= document.getElementById("activityDescription").value;
-        const activityDuration= document.getElementById("activityDuration").value;
-        const activityStreet= document.getElementById("activityStreet").value;
-        const activityCity= document.getElementById("activityCity").value;
-        const activityState= document.getElementById("activityState").value;
-        const activityZip= document.getElementById("activityZip").value;
-        const activityCost= document.getElementById("activityCost").value;
+        const name= document.getElementById("name").value;
+        const date= document.getElementById("date").value;
+        const time= document.getElementById("time").value;
+        const description= document.getElementById("description").value;
+        const duration= document.getElementById("duration").value;
+        const street= document.getElementById("street").value;
+        const city= document.getElementById("city").value;
+        const state= document.getElementById("state").value;
+        const zip= document.getElementById("zip").value;
+        const cost= document.getElementById("cost").value;
         const parkingFee= document.getElementById("parkingFee").value;
         const organizerName= document.getElementById("organizerName").value;
         const organizerEmail= document.getElementById("organizerEmail").value;
 
         console.log("Form values:", { //check to see if got values
-          activityName,
-          activityDate,
-          activityTime,
-          activityDescription,
-          activityDuration,
-          activityStreet,
-          activityCity,
-          activityState,
-          activityZip,
-          activityCost,
+          name,
+          date,
+          time,
+          description,
+          duration,
+          street,
+          city,
+          state,
+          zip,
+          cost,
           parkingFee,
           organizerName,
           organizerEmail
         });
 
-        if (!activityName || !activityTime) { //error handling
+        if (!name || !time) { //error handling
           console.error("Activity name or time not found");
           return;
         }
 
 //creates activity objects 
         const activity = {
-          name: activityName,
-          date: activityDate,
-          time: activityTime,
-          description: activityDescription,
-          duration: activityDuration,
-          activityStreet: activityStreet,
-          activityCity: activityCity,
-          activityState: activityState,
-          activityZip: activityZip,
-          cost: activityCost,
+          name: name,
+          date: date,
+          time: time,
+          description: description,
+          duration: duration,
+          street: street,
+          city: city,
+          state: state,
+          zip: zip,
+          cost: cost,
           parkingFee: parkingFee,
           organizerName: organizerName,
           organizerEmail: organizerEmail

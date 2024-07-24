@@ -62,17 +62,14 @@ activities.forEach(activity => {
     `;
     activityElement.dataset.description = activity.description;
     activityElement.dataset.duration = activity.duration;
-    activityElement.dataset.activityStreet = activity.street;
-    activityElement.dataset.activityCity = activity.city;
-    activityElement.dataset.activityState = activity.state;
-    activityElement.dataset.activityZip = activity.zip;
+    activityElement.dataset.street = activity.street;
+    activityElement.dataset.city = activity.city;
+    activityElement.dataset.state = activity.state;
+    activityElement.dataset.zip = activity.zip;
     activityElement.dataset.cost = activity.cost;
     activityElement.dataset.parkingFee = activity.parkingFee;
     activityElement.dataset.organizerName = activity.organizerName;
     activityElement.dataset.organizerEmail = activity.organizerEmail;
-    activityElement.dataset.city = activity.city;
-    activityElement.dataset.state = activity.state;
-    activityElement.dataset.date = activity.date;
     cell.appendChild(activityElement);
   } else {
     console.warn(`No cell found for date: ${activityDate}`);
