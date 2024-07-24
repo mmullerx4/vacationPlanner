@@ -6,7 +6,7 @@ import { initCalendar } from "./calendar.mjs";
 import { initDetailModal } from "./detailModal.mjs";
 import { initWeather } from "./weather.mjs";
 import { saveActivity, getActivities } from "./activityStorage.mjs";
-import { initialActivities } from "./activityStorage.mjs";
+import { initializeActivities } from "./activityStorage.mjs";
 
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -14,17 +14,15 @@ document.addEventListener("DOMContentLoaded", async () => {
    
 
   try { 
-    await initialActivities(); //wait to ensure completes
+    initializeActivities(); //wait to ensure completes
 
-    console.log("main.js script loaded");
+    console.log("Main script loaded and initialized");
     
     initLogin();
     initActivityEntry();
     initDetailModal();
     initWeather();
-    await initCalendar(); //because it returns a Promise (an object that represents the eventual completion (or failure) of an async operation and its resulting value).
-    //Program keep working and I will promise to get that back to you when completed.
-    console.log("main script loaded and initialized") 
+    await initCalendar(); //wait for calendar init
     
 
     //check initial activities and then display them in console
