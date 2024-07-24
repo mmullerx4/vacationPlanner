@@ -10,3 +10,12 @@ export function formatDate(date) {
   const day = String(d.getDate()).padStart(2, "0");
   return `${year}-${month}-${day}`;
 }
+
+//change from Military time to Standard time
+export function formatTime24to12(time24) {
+  const [hour, minute] = time24.split(":").map(Number);
+  const period = hour >= 12 ? "PM" : "AM";
+  const hour12 = hour % 12 || 12; //convert to 12hr format
+  return `${hour12}:${String(minute).padStart(2, '0')} ${period}`;
+ }
+

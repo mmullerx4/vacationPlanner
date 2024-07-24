@@ -1,5 +1,6 @@
 //Logic for activity entry
-import { saveActivity } from "./activityStorage.mjs"; //importing to be able to save at the end this file.
+import { saveActivity } from "./activityStorage.mjs"; 
+import { formatTime24to12 } from "./util.mjs";
 
 export function initActivityEntry() {
   console.log("initActivityEntry function called");

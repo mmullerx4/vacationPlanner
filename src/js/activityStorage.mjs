@@ -1,5 +1,7 @@
 //Module for storing activities
 
+import { formatTime24to12 } from "./util.mjs";
+
 
     //prepopulate 3 initial activities
     const initialActivities = [
@@ -67,6 +69,12 @@ export function initializeActivities() {
 export async function saveActivity(activity) {
   //Retrieve existing activities or initialize an empty array
   let activities = JSON.parse(localStorage.getItem("activities")) || []; 
+  //Format time
+  if (activity.time) {
+    console.log("original time: ", activity.time);
+    activity.time = formatTime24to12(activity.time);
+    console.log("Formatted time:", activity.time);
+  }
   //Add new activity to the array
   activities.push(activity);
   localStorage.setItem("activities", JSON.stringify(activities)); //makes each piece of JSON array a string
@@ -75,7 +83,20 @@ export async function saveActivity(activity) {
 
 export function getActivities() {
   //Retrieve activities from localStorage and parse them
-  return JSON.parse(localStorage.getItem("activities")) || []; 
+  let activities = JSON.parse(localStorage.getItem("activities")) || []; 
+
+  //reformat time if needed
+  activities = activities.map(activity => {
+    if (activity.time) {
+      console.log("Before formatting:", activity.time);
+      activity.time = formatTime24to12(activity.time);
+      console.log("After formatting:", activity.time);
+  
+    }
+    return activity;
+  });
+
+  return activities;
 }
 
 export function deleteActivity(activityId) {

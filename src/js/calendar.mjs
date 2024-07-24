@@ -6,13 +6,6 @@
 import { getActivities } from  "./activityStorage.mjs";
 import { formatDate } from "./util.mjs";
 
-//change from Military time to Standard time
-function formatTime24to12(time24) {
-  const [hour, minute] = time24.split(":").map(Number);
-  const period = hour >= 12 ? "PM" : "AM";
-  const hour12 = hour % 12 || 12; //convert to 12hr format
-  return `${hour12}:${String(minute).padStart(2, '0')} ${period}`;
- }
 
  function generateCalendar(month, year) {
   const daysInMonth = new Date(year, month + 1, 0).getDate(); //calculates the total number of days in particular month
@@ -50,6 +43,7 @@ for (let i = 0; i < totalCells; i++) {
 //Retrieve activities from storage module. Iterates through each activity using 'formatDate' and display in correct cell. Then creates activityElement for each activity & appends to cell
 const activities = getActivities();
 console.log("Fetched activities:", activities);
+
 activities.forEach(activity => {
   const activityDate = formatDate(activity.date);
   const cell = document.querySelector(`.date[data-date="${activityDate}"]`);
@@ -58,7 +52,7 @@ activities.forEach(activity => {
     const activityElement = document.createElement("div");
     activityElement.classList.add("activity");
     activityElement.innerHTML = `
-    ${activity.name} ${formatTime24to12(activity.time)}
+    ${activity.name} ${activity.time}
     `;
     activityElement.dataset.description = activity.description;
     activityElement.dataset.duration = activity.duration;
