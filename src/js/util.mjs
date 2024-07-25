@@ -11,6 +11,11 @@ export function formatDate(date) {
   return `${year}-${month}-${day}`;
 }
 
+export function toTitleCase(str) {
+  return str.toLowerCase().split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+}
+
+
 //change from Military time to Standard time
 export function formatTime24to12(time24) {
   const [hour, minute] = time24.split(":").map(Number);

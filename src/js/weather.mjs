@@ -1,7 +1,7 @@
 //Logic for weather
 //first get the city and date values from the user submit
 
-
+import { formatDate, toTitleCase } from "./util.mjs";
 
 //some fine tuning by chatgpt
  export function initWeather() {
@@ -11,16 +11,22 @@
      console.log("Form submit event fired");
   
      //get form values
-     const city= document.getElementById("city").value.trim();
-     const state= document.getElementById("state").value.trim();
-     const date= document.getElementById("date").value;
-     const apiKey = "f4f5709c3a974e43be4dab542cb448fa";
+     const rawCity= document.getElementById("city").value.trim();
+     const rawState= document.getElementById("state").value.trim();
+     const rawDate= document.getElementById("date").value;
+     const apiKey = "";
+
+     const date = formatDate(rawDate);
+     const city = toTitleCase(rawCity);
+     const state = rawState.toUpperCase();
+
+     console.log(city, state, date); //check if values are fetched
 
      fetchWeatherByCity(city, state, date, apiKey);
    });
 
    async function fetchWeatherByCity(city, state, date, apiKey) {
-    const baseURL = "https://api.weatherbit.io/v2.0/current";
+    const baseURL = "https://api.weatherbit.io/v2.0/forecast/daily";
     const url = `${baseURL}?city=${encodeURIComponent(city)},${encodeURIComponent(state)}&key=${apiKey}&lang=en&units=M&include=M`;
     
     
@@ -38,7 +44,7 @@
    }
 
    function displayWeatherData(data, date) { 
-    const weatherResult = document.getElementById("weatherResult");
+    const weatherResult = document.getElementById("weatherResult"); //finds our correct date in the array.
     const forecast = data.data.find(forecast => forecast.valid_date === date);//access the first (& prob only) item in the data array
 
 
@@ -53,6 +59,3 @@
     }
   }
 }
-
-
-//minutely instead of M
